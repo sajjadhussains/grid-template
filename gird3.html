@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid#</title>
+</head>
+
+<style>
+    body{
+        height: 100vh;
+        background-color:brown;
+        display: grid;
+        grid-template-rows: min-content auto min-content;
+        grid-template-areas: 
+        'h'
+        'm'
+        'f';
+    }
+    header{
+        grid-area: h;
+        background-color:pink;
+        width: 100%;
+    }
+    main{
+        grid-area: m;
+        width: 100%;
+        background-color:red;
+    }
+    footer{
+        grid-area: f;
+        width: 100%;
+        background-color: aquamarine;
+    }
+
+    article{
+        display: grid;
+        grid-template-areas: 
+        's1 a1'
+        's2 a2'
+        's3 .';
+        height: 100%;
+    }
+    #sec1{
+        grid-area:s1;
+        border: solid;
+        }
+    #sec2{
+        grid-area:s2;
+        border: solid;
+        }
+    #sec3{
+        grid-area:s3;
+        border: solid;
+        }
+
+    #aside1{
+        grid-area:a1;
+        border: solid;
+        }
+    #aside2{
+        grid-area:a2;
+        border: solid;
+        }
+
+        footer{
+            display: grid;
+            border: solid;
+            margin: 40px;
+            grid-template-areas: 
+            'n1 n2';
+        }
+        #nav1{
+            grid-area: n1;
+            border: solid;
+        }
+        #nav2{
+            grid-area: n2;
+            border: solid;
+        }
+
+        @media  screen and (max-width:600px){
+            footer{
+                grid-template-areas: 
+                'n2'
+                'n1';
+            }
+        }
+</style>
+<body>
+    <header>
+        <nav>
+            Header Nav
+        </nav>
+    </header>
+    <main>
+        <article>
+            <section id="sec1">Section 1</section>
+            <section id="sec2">Section 2</section>
+            <section id="sec3">Section 3</section>
+
+            <aside id="aside1">aside 1</aside>
+            <aside id="aside2">aside 2</aside>
+        </article>
+    </main>
+    <footer>
+        <nav id="nav1">Nav 1</nav>
+        <nav id="nav2">Nav 2</nav>
+    </footer>
+</body>
+</html>
